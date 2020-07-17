@@ -1,0 +1,625 @@
+@font-face {
+  font-family: 'sora';
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/sora/v1/xMQOuFFYT72X5wkB_18qmnndmSdgnk-DKQRDA8i1P4xdNw.woff) format('woff');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face{
+	font-family: roboto;
+	src: url(src/font/roboto.ttf);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+
+body
+{
+	margin:0px;
+	background-color: #4098b8;
+}
+
+
+
+header
+{
+	display: flex;
+	justify-content: space-around;
+	border-bottom: 5px solid orange;
+	background-color: black;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.first
+{
+	display: flex;
+	justify-content: space-around;
+	width: 450px;
+}
+.cercle {
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    background: orange;
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    animation: 2.5s linear infinite live;
+}
+#heure
+{
+	font-family: sora, sans-serif;
+	font-size: 18px;
+	color: white;
+	background-color: #0f3596;
+	width: 60px;
+	padding: 5px;
+	text-align: center;
+	border-radius: 30px;
+	display: block;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: 60px;
+}
+#titre
+{
+	font-size: 40px;
+	font-family: sora, sans-serif;
+	text-align: center;
+	color: ghostwhite;
+}
+.top
+{
+	display: flex;
+	justify-content: space-between;
+}
+.refresh
+{
+	width: 50px;
+	height: 50px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#jour-nuit
+{
+	width: 80px;
+	height: 80px;
+
+}
+.indications
+{
+	display: flex;
+	justify-content: space-between;
+	width: 130px;
+	padding: 10px;
+}
+figure
+{
+	text-align: center;
+	font-family: roboto;
+	text-decoration: underline orange;
+}
+#day-night
+{
+	font-family: sora, sans-serif;
+	color: white;
+	background-color: #24728f;
+	padding: 10px;
+	border-radius: 30px;
+	display: block;
+	margin-top: auto;
+	margin-bottom: auto; 
+}
+.all
+{
+	display: flex;
+	flex-direction: column;
+}
+#infos
+{
+	width: 450px;
+	display: block;
+	margin:auto;
+	border-radius: 10px;
+	background-color: ghostwhite;
+	padding-top: 10px;
+	padding-bottom: 20px;r
+}
+.ville-pays
+{
+	display: flex;
+	justify-content: flex-start;
+	margin-left: 40px;
+}
+#pays
+{
+	display: block;
+	margin-top: auto;
+	margin-bottom: auto;
+	background-color: orange;
+	padding: 7px;
+	border-radius: 15px;
+	color: white;
+	font-family: sora, sans-serif;
+	font-size: 15px;
+}
+#ville
+{
+	font-family: sora, sans-serif;
+	font-size: 30px;
+	margin-top: 20px;
+	color: #071b36;
+	padding-right: 5px;
+}
+#date
+{
+ margin-left: 40px;
+ margin-top: -20px;
+ font-family: sora, sans-serif;
+ font-size:16px;
+ color: black;
+}
+.top-infos
+{
+	display: flex;
+	justify-content: space-between;
+}
+#temp
+{
+	font-family: sora, sans-serif;
+	font-size: 25px;
+	text-align: center;
+	color: black;
+}
+.div-temp
+{
+	border-right: 2px solid silver;
+	padding-right: 50px;
+	height: 70%;
+	display: block;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.img-app
+{
+	height: 90px;
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: space-between;
+}
+#image
+{
+	width: 70px;
+	height:auto;
+	display: block;
+	margin:auto;
+}
+#apparence
+{
+	font-family: roboto, sans-serif;
+	text-align:center;
+	font-size: 20px;
+	color:#3b3a37;
+	margin:auto;
+}
+
+
+.fore-date
+{
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 0px;
+	margin:auto;
+	border:2px solid red;
+}
+.forecast
+{
+	display: flex;
+	justify-content: space-around;
+}
+#fore-date-1
+{
+	background-color: #2f2f30;
+	color: white;
+	padding: 5px;
+	width: auto;
+	text-align: center;
+	width: 45px;
+	border-radius: 10px;
+	display: block;
+	margin:auto;
+}
+#fore-date-2
+{
+	background-color: #2f2f30;
+	color: white;
+	padding: 5px;
+	width: auto;
+	text-align: center;
+	width: 45px;
+	border-radius: 10px;
+	display: block;
+	margin:auto;
+}
+#fore-date-3
+{
+	background-color: #2f2f30;
+	color: white;
+	padding: 5px;
+	width: auto;
+	text-align: center;
+	width: 45px;
+	border-radius: 10px;
+	display: block;
+	margin:auto;
+}
+#fore-date-4
+{
+	background-color: #2f2f30;
+	color: white;
+	padding: 5px;
+	width: auto;
+	text-align: center;
+	width: 45px;
+	border-radius: 10px;
+	display: block;
+	margin:auto;
+}
+.fore
+{
+	background-color: #dadfe3;
+	width: 75px;
+	height: 150px;
+	padding-bottom: 20px;
+	padding-left: 7px;
+	padding-right: 7px;
+	border-top: 4px solid #071b36;
+	border-bottom: 3px solid #071b36;
+	border-radius: 0px 0px 3px 3px;
+}
+
+	#indic-fore-1
+	{
+		text-align: center;
+		font-family: sora, sans-serif;
+	}
+	#img-fore-1
+	{
+		display: block;
+		margin:auto;
+	}
+	#temp-fore-1
+	{
+		text-align:center;
+		font-family: roboto;
+		color:#3b3a37;
+	}
+#indic-fore-2
+{
+	text-align: center;
+	font-family: sora, sans-serif;
+}
+#img-fore-2
+{
+	display: block;
+	margin:auto;
+}
+#temp-fore-2
+{
+	text-align:center;
+	font-family: roboto;
+	color:#3b3a37;
+}
+	#indic-fore-3
+	{
+		text-align: center;
+		font-family: sora, sans-serif;
+	}
+	#img-fore-3
+	{
+		display: block;
+		margin:auto;
+	}
+	#temp-fore-3
+	{
+		text-align:center;
+		font-family: roboto;
+		color:#3b3a37;
+	}
+#indic-fore-4
+{
+	text-align: center;
+	font-family: sora, sans-serif;
+}
+#img-fore-4
+{
+	display: block;
+	margin:auto;
+}
+#temp-fore-4
+{
+	text-align:center;
+	font-family: roboto;
+	color:#3b3a37;
+}
+
+.reste
+{
+	display: flex;
+	justify-content: center;
+	padding: 30px;
+}
+.img-app
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-left: 50px;
+	padding-bottom: 20px;
+}
+
+
+
+.more-informations
+{
+	display: flex;
+	justify-content: space-between;
+	width: 80%;
+	margin:auto;
+	font-family: sora, sans-serif;
+	align-items: start;
+}
+.indic
+{
+	color: #071b36;
+	font-size: 20px;
+}
+
+
+
+
+
+
+
+#link
+{
+	font-size: 20px;
+	font-family: monospace;
+	color: #0b1738;
+	text-decoration: none;
+	padding: 15px;
+	position: fixed;
+	bottom: 0px;
+}
+
+
+
+@media screen and (min-width: 100px) and (max-width: 980px)
+{
+	header
+	{
+		display: flex;
+		flex-direction: column;
+		padding: 3%;
+	}
+	.first
+	{
+		width: 100%;
+	}
+	.cercle
+	{
+		width: 30px;
+		height: 30px;
+		border-radius: 50px;
+	}
+	#titre
+	{
+		font-size: 80px;
+	}
+	#heure
+	{
+		text-align: center;
+		font-size: 50px;
+		width: 170px;
+	}
+	.indications
+	{
+		width: 270px;
+	}
+	#jour-nuit
+	{
+		width: 150px;
+		height: 150px;
+		padding: 20px;
+	}
+	.refresh
+	{
+		width: 100px;
+		height: 100px;
+	}
+	#day-night
+	{
+		font-size: 40px;
+	}
+	figure
+	{
+		font-size: 30px;
+	}
+	#infos
+	{
+		width: 90%;
+		border-radius: 40px;
+	}
+	#ville
+	{
+		font-size: 90px;
+		margin-left: 20px;
+	}
+	#pays
+	{
+		font-size: 40px;
+		margin-top: 55px;
+		margin-left: 10px;
+		border-radius: 35px;
+		padding: 10px;
+	}
+	#date
+	{
+		font-size: 40px;
+		margin-top: -70px;
+		margin-left: 60px;
+	}
+
+	.img-app
+	{
+		display: flex;
+		flex-direction: column-reverse;
+		height: 230px;
+	}
+	.fore
+	{
+		width: 170px;
+		height: 300px;
+	}
+
+#fore-date-1
+{
+	font-size: 30px;
+	width: 80px;
+}
+#fore-date-2
+{
+	font-size: 30px;
+	width: 80px;
+}
+#fore-date-3
+{
+	font-size: 30px;
+	width: 80px;
+}
+#fore-date-4
+{
+	font-size: 30px;
+	width: 80px;
+}
+#indic-fore-1
+	{
+		font-size: 30px;
+	}
+	#img-fore-1
+	{
+		width: 100px;
+		height: 100px;
+	}
+	#temp-fore-1
+	{
+		font-size: 30px;
+	}
+#indic-fore-2
+{
+	font-size: 30px;
+}
+#img-fore-2
+{
+	width: 100px;
+	height: 100px;
+}
+#temp-fore-2
+{
+	font-size: 30px;
+}
+	#indic-fore-3
+	{
+		font-size: 30px;
+	}
+	#img-fore-3
+	{
+		width: 100px;
+		height: 100px;
+	}
+	#temp-fore-3
+	{
+		font-size: 30px;
+	}
+#indic-fore-4
+{
+	font-size: 30px;
+}
+#img-fore-4
+{
+	width: 100px;
+	height: 100px;
+}
+#temp-fore-4
+{
+	font-size: 30px;
+}
+
+
+
+
+	.reste
+	{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	.div-temp
+	{
+		border-right: none;
+	}
+	#temp
+	{
+		font-size: 70px;
+		margin-left: 12.5%;
+	}
+	.img-app
+	{
+		width: 50%;
+		margin-left:auto;
+		margin-right: auto;
+		margin-top: -40px;
+	}
+	#image
+	{
+		width: 175px;
+		height: auto;
+	}
+	#apparence
+	{
+		font-size: 40px;
+	}
+	#link
+	{
+		font-size: 50px;
+		position: relative;
+		padding: 30px;
+	}
+	.indic
+	{
+		font-size: 40px;
+	}
+	.more-informations
+	{
+		font-size: 40px;
+	}
+
+}
+
+
+
+
+@keyframes live
+{
+	0%{
+		opacity: 0%;
+	}
+	50%{
+		opacity: 100%;
+	}
+	100%
+	{
+		opacity: 0%;
+	}
+}
