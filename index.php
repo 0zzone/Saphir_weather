@@ -28,7 +28,7 @@
 		<p id="day-night">Jour</p>
 		</div>
 		<figure>
-			<a href="index.html"><img src="src/img/refresh.png" class="refresh" /></a>
+			<a href="index.php"><img src="src/img/refresh.png" class="refresh" /></a>
 			<caption>Rafraîchir</caption>
 		</figure>
 
