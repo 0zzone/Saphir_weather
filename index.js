@@ -36,7 +36,7 @@ function maPosition(position) {
   var longi = position.coords.longitude;
   var language = "fr"
   var unit = "metric"
-  var url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lati}&lon=${longi}&lang=${language}&units=${unit}&appid=${apiKey}`;
+  var url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lati}&lon=${longi}&lang=${language}&units=${unit}&appid=${apiKey}`;
 
 
 
