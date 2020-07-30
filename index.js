@@ -72,6 +72,7 @@ function fore1()
       document.getElementById("indic-fore-1").innerHTML = fore_1 + " h";
 
       var icone = resJson.list[1].weather[0].icon;
+      console.log(icone);
       document.getElementById("img-fore-1").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
 
       document.getElementById("temp-fore-1").innerHTML = resJson.list[1].main.temp + " °C";
@@ -190,8 +191,7 @@ if(icone == '01n' || icone == '02n' || icone == '03n' || icone == '04n' || icone
 
 
 }
-
-   
+ 
     })
 }
 
