@@ -46,7 +46,13 @@ header
     margin-bottom: auto;
     animation: 2.5s linear infinite live;
 }
-
+#infos-city{
+	display: block;
+	font-family: sora,sans-serif;
+	margin-top: auto;
+	margin-bottom: auto;
+	color: silver;
+}
 .input-recherche{
 	width: 450px;
 	display: block;
@@ -187,7 +193,7 @@ header
 {
 	display: flex;
 	justify-content: space-between;
-	width: 130px;
+	width: 230px;
 	padding: 10px;
 }
 figure
@@ -521,7 +527,9 @@ figure
 	}
 	.indications
 	{
-		width: 270px;
+		width: 480px;
+		display: flex;
+		justify-content: space-between;
 	}
 	#jour-nuit
 	{
@@ -542,7 +550,9 @@ figure
 	{
 		font-size: 30px;
 	}
-
+	#infos-city{
+		font-size: 35px;
+	}
 	.input-recherche{
 		width: 100%;
 	}
@@ -566,7 +576,7 @@ figure
 	#validate{
 		font-size: 30px;
 		width: 25%;
-		height: 60px;
+		height: 65px;
 	}
 	#ville-result
 	{

@@ -45,6 +45,7 @@ function maPosition(position) {
     .then(res => res.json())
     .then(resJson => {
       document.getElementById("ville").innerHTML = resJson.city.name;
+      document.getElementById("infos-city").innerHTML = " ~ " + resJson.city.name;
       document.getElementById("temp").innerHTML = resJson.list[0].main.temp + " °C";
       document.getElementById("pays").innerHTML = resJson.city.country;
 
