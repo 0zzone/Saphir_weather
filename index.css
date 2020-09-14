@@ -46,6 +46,102 @@ header
     margin-bottom: auto;
     animation: 2.5s linear infinite live;
 }
+
+.input-recherche{
+	width: 450px;
+	display: block;
+	margin:auto;
+	font-family: sora, sans-serif;
+}
+#h1-recherche{
+	text-align: center;
+}
+#recherche{
+	width: 300px;
+	outline: none;
+	height: 25px;
+	border: 1px solid black;
+	border-radius: 3.5px;
+	padding-left: 5px;
+}
+#validate{
+	width: 100px;
+	outline: none;
+	height: 28px;
+	border: 1px solid black;
+	border-radius: 3.5px;
+	background: none;
+}
+.div-recherche{
+	display: block;
+	margin:auto;
+	width: 415px;
+}
+#pays-result
+{
+	display: block;
+	margin-top: auto;
+	margin-bottom: auto;
+	background-color: orange;
+	padding: 7px;
+	border-radius: 15px;
+	color: white;
+	font-family: sora, sans-serif;
+	font-size: 15px;
+}
+#ville-result
+{
+	font-family: sora, sans-serif;
+	font-size: 30px;
+	margin-top: 20px;
+	color: #071b36;
+	padding-right: 5px;
+}
+#date-result
+{
+ margin-left: 40px;
+ margin-top: -20px;
+ font-family: sora, sans-serif;
+ font-size:16px;
+ color: black;
+}
+#temp-result
+{
+	font-family: sora, sans-serif;
+	font-size: 25px;
+	text-align: center;
+	color: black;
+}
+#image-result
+{
+	width: 70px;
+	height:auto;
+	display: block;
+	margin:auto;
+}
+#apparence-result
+{
+	font-family: roboto, sans-serif;
+	text-align:center;
+	font-size: 20px;
+	color:#3b3a37;
+	margin:auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #heure
 {
 	font-family: sora, sans-serif;
@@ -446,6 +542,46 @@ figure
 	{
 		font-size: 30px;
 	}
+
+	.input-recherche{
+		width: 100%;
+	}
+	.div-recherche
+	{
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+	}
+	#h1-recherche{
+		text-align: center;
+		font-size: 65px;
+	}
+	#recherche{
+	width: 60%;
+	outline: none;
+	height: 60px;
+	font-size: 35px;
+	padding-left: 30px;
+	}
+	#validate{
+		font-size: 30px;
+		width: 25%;
+		height: 60px;
+	}
+	#ville-result
+	{
+		font-size: 90px;
+		margin-left: 20px;
+	}
+	#pays-result
+	{
+		font-size: 40px;
+		margin-top: 55px;
+		margin-left: 10px;
+		border-radius: 35px;
+		padding: 10px;
+	}
+
 	#infos
 	{
 		width: 90%;
@@ -470,7 +606,12 @@ figure
 		margin-top: -70px;
 		margin-left: 60px;
 	}
-
+	#date-result
+	{
+		font-size: 40px;
+		margin-top: -70px;
+		margin-left: 60px;
+	}
 	.img-app
 	{
 		display: flex;
@@ -574,6 +715,11 @@ figure
 		font-size: 70px;
 		margin-left: 12.5%;
 	}
+	#temp-result
+	{
+		font-size: 70px;
+		margin-left: 12.5%;
+	}
 	.img-app
 	{
 		width: 50%;
@@ -587,6 +733,15 @@ figure
 		height: auto;
 	}
 	#apparence
+	{
+		font-size: 40px;
+	}
+	#image-result
+	{
+		width: 175px;
+		height: auto;
+	}
+	#apparence-result
 	{
 		font-size: 40px;
 	}

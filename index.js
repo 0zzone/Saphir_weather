@@ -16,6 +16,7 @@ var jour = today.getDate();
 var annee = today.getFullYear();
 var date_complete = jour + " " + mois + " " + annee;
 document.getElementById("date").innerHTML = date_complete;
+document.getElementById("date-result").innerHTML = date_complete;
 }
 setInterval("maDate()", 1000);
 
@@ -43,7 +44,6 @@ function maPosition(position) {
   fetch(url)
     .then(res => res.json())
     .then(resJson => {
-      console.log(resJson);
       document.getElementById("ville").innerHTML = resJson.city.name;
       document.getElementById("temp").innerHTML = resJson.list[0].main.temp + " °C";
       document.getElementById("pays").innerHTML = resJson.city.country;
@@ -53,8 +53,8 @@ function maPosition(position) {
 
       document.getElementById("apparence").innerHTML = resJson.list[0].weather[0].description;
       document.getElementById("ressenti").innerHTML =  resJson.list[0].main.feels_like + " °C";
-      document.getElementById("temp_max").innerHTML =  resJson.list[0].main.temp_min + " °C";
-      document.getElementById("temp_min").innerHTML =  resJson.list[0].main.temp_max + " °C";
+      document.getElementById("temp_max").innerHTML =  resJson.list[0].main.temp_max + " °C";
+      document.getElementById("temp_min").innerHTML =  resJson.list[0].main.temp_min + " °C";
       document.getElementById("humidity").innerHTML =  resJson.list[0].main.humidity + " %";
       document.getElementById("pressure").innerHTML =  resJson.list[0].main.pressure + " hPa";
 
@@ -72,7 +72,6 @@ function fore1()
       document.getElementById("indic-fore-1").innerHTML = fore_1 + " h";
 
       var icone = resJson.list[1].weather[0].icon;
-      console.log(icone);
       document.getElementById("img-fore-1").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
 
       document.getElementById("temp-fore-1").innerHTML = resJson.list[1].main.temp + " °C";
@@ -178,9 +177,9 @@ if(icone == '01n' || icone == '02n' || icone == '03n' || icone == '04n' || icone
 	var body = document.querySelector('body');
 		body.style.backgroundColor="#0c224a";
 
-  document.getElementById("jour-nuit").setAttribute('src', "src/img/lune.png")
+  document.getElementById("jour-nuit").setAttribute('src', "src/img/lune.png");
 
-  document.getElementById("day-night").innerHTML = "Nuit"
+  document.getElementById("day-night").innerHTML = "Nuit";
 
 
   var lien = document.getElementById("link");
@@ -189,10 +188,47 @@ if(icone == '01n' || icone == '02n' || icone == '03n' || icone == '04n' || icone
   var refresh = document.querySelector('figure');
     refresh.style.color="silver";
 
+  var rechercher = document.getElementById('h1-recherche');
+      rechercher.style.color="ghostwhite";
+
+  var validate_input = document.getElementById('validate');
+    validate_input.style.color="ghostwhite";
+    validate_input.style.border="1px solid ghostwhite";
 
 }
+
  
     })
 }
 
+function recherche(){
+	var apiKey = "17687efd1ab56d1a61a6d883c105d91a";
+	var language = "fr";
+	var unit = "metric";
+	var city = document.getElementById('recherche').value;
+	var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${language}&units=${unit}&appid=${apiKey}`;
 
+	fetch(url)
+    	.then(res => res.json())
+    	.then(resJson => {
+    		console.log(resJson);
+        document.getElementById('ville-result').innerHTML = resJson.name;
+        document.getElementById('pays-result').innerHTML = resJson.sys.country;
+        document.getElementById("temp-result").innerHTML = resJson.main.temp + " °C";
+
+        var icone = resJson.weather[0].icon;
+        document.getElementById("image-result").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
+
+        document.getElementById("apparence-result").innerHTML = resJson.weather[0].description;
+
+        document.getElementById("ressenti-result").innerHTML =  resJson.main.feels_like + " °C";
+        document.getElementById("temp_max-result").innerHTML =  resJson.main.temp_max + " °C";
+        document.getElementById("temp_min-result").innerHTML =  resJson.main.temp_min + " °C";
+        document.getElementById("humidity-result").innerHTML =  resJson.main.humidity + " %";
+        document.getElementById("pressure-result").innerHTML =  resJson.main.pressure + " hPa";
+
+        var wind = resJson.wind.speed * 3.6;
+        document.getElementById("wind-result").innerHTML = wind + " Km/h";
+
+    	})
+}
