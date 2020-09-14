@@ -206,7 +206,7 @@ function recherche(){
 	var language = "fr";
 	var unit = "metric";
 	var city = document.getElementById('recherche').value;
-	var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${language}&units=${unit}&appid=${apiKey}`;
+	var url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${language}&units=${unit}&appid=${apiKey}`;
 
 	fetch(url)
     	.then(res => res.json())
