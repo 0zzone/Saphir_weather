@@ -1,11 +1,14 @@
 .english-mode{
-	width: 260px;
+	width: 300px;
 	display: flex;
 	justify-content: space-between;
 	margin:auto;
 }
 #lang
 {
+	display: block;
+	margin-top: auto;
+	margin-bottom: auto;
 	position: relative;
 	width: 60px;
 	height: 30px;
@@ -79,7 +82,7 @@ header
 {
 	display: flex;
 	justify-content: space-around;
-	width: 450px;
+	width: 470px;
 }
 .cercle {
     width: 15px;
@@ -91,15 +94,26 @@ header
     margin-bottom: auto;
     animation: 2.5s linear infinite live;
 }
-#infos-city{
-	display: block;
+.infos-city-div{
+	display: flex;
 	font-family: sora,sans-serif;
 	margin-top: auto;
 	margin-bottom: auto;
 	color: white;
 	background-color: #03a9f4;
-	padding: 8px;
+	padding-left: 6px;
+	padding-right: 8px;
 	border-radius: 5px;
+	justify-content: space-between;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.img-loc{
+	width: 25px;
+	height: 25px;
+	display: block;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 .input-recherche{
 	width: 450px;
@@ -574,13 +588,17 @@ figure
 		width: 170px;
 	}
 	.english-mode{
-		width: 600px;
+		width: 650px;
 	}
 	.indic-langue{
 		font-size: 35px;
 		display: block;
 		margin-top: auto;
 		margin-bottom: auto;
+	}
+	.img-loc{
+		width: 40px;
+		height: 40px;
 	}
 	#lang{
 		width: 150px;
