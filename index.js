@@ -281,7 +281,22 @@ else if(document.getElementById('lang').checked == false){
 	fetch(url)
     	.then(res => res.json())
     	.then(resJson => {
-        document.getElementById('ville-result').innerHTML = resJson.name;
+
+        var name_city = resJson.message;
+        var name_geo = resJson.message;
+        if(name_city == "city not found"){
+          document.getElementById('ville-alert').innerHTML = "Aucune ville n'a été trouvée :(";
+          document.getElementById('infos-result').style.display="none";
+        }
+        if(name_geo == "Nothing to geocode"){
+          document.getElementById('ville-alert').innerHTML = "Veuillez rentrer dans la barre de recherche ci-dessus le nom d'une ville pour  obtenir la météo de celle-ci";
+          document.getElementById('infos-result').style.display="none";
+        }
+        else{
+          document.getElementById('ville-result').innerHTML = resJson.name;
+        }
+
+
         document.getElementById('pays-result').innerHTML = resJson.sys.country;
         document.getElementById("temp-result").innerHTML = resJson.main.temp + unite;
 
