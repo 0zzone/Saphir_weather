@@ -1,3 +1,6 @@
+
+
+
 function monHeure()
 {
 	var today = new Date();
@@ -26,17 +29,41 @@ setInterval("maDate()", 1000);
 
 
 
-if(navigator.geolocation){
-  navigator.geolocation.getCurrentPosition(maPosition);
-}
 
+function loc(){
+
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(maPosition);
+  }
+  recherche()
+}
+loc()
 
 function maPosition(position) {
+
+
+  if(navigator.geolocation){
+  navigator.geolocation.getCurrentPosition(maPosition);
+  }
+
+
+  if(document.getElementById('lang').checked == true){
+    var language = "en"
+    var unit = "imperial"
+    var unite = " °F"
+  }
+  else{
+    var language = "fr"
+    var unit = "metric"
+    var unite = " °C"
+  }
+
+
+
+
   var apiKey = "17687efd1ab56d1a61a6d883c105d91a";
   var lati = position.coords.latitude;
   var longi = position.coords.longitude;
-  var language = "fr"
-  var unit = "metric"
   var url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lati}&lon=${longi}&lang=${language}&units=${unit}&appid=${apiKey}`;
 
 
@@ -45,17 +72,17 @@ function maPosition(position) {
     .then(res => res.json())
     .then(resJson => {
       document.getElementById("ville").innerHTML = resJson.city.name;
-      document.getElementById("infos-city").innerHTML = " ~ " + resJson.city.name;
-      document.getElementById("temp").innerHTML = resJson.list[0].main.temp + " °C";
+      document.getElementById("infos-city").innerHTML = resJson.city.name;
+      document.getElementById("temp").innerHTML = resJson.list[0].main.temp + unite;
       document.getElementById("pays").innerHTML = resJson.city.country;
 
       var icone = resJson.list[0].weather[0].icon;
       document.getElementById("image").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
 
       document.getElementById("apparence").innerHTML = resJson.list[0].weather[0].description;
-      document.getElementById("ressenti").innerHTML =  resJson.list[0].main.feels_like + " °C";
-      document.getElementById("temp_max").innerHTML =  resJson.list[0].main.temp_max + " °C";
-      document.getElementById("temp_min").innerHTML =  resJson.list[0].main.temp_min + " °C";
+      document.getElementById("ressenti").innerHTML =  resJson.list[0].main.feels_like + unite;
+      document.getElementById("temp_max").innerHTML =  resJson.list[0].main.temp_max + unite;
+      document.getElementById("temp_min").innerHTML =  resJson.list[0].main.temp_min + unite;
       document.getElementById("humidity").innerHTML =  resJson.list[0].main.humidity + " %";
       document.getElementById("pressure").innerHTML =  resJson.list[0].main.pressure + " hPa";
 
@@ -75,7 +102,7 @@ function fore1()
       var icone = resJson.list[1].weather[0].icon;
       document.getElementById("img-fore-1").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
 
-      document.getElementById("temp-fore-1").innerHTML = resJson.list[1].main.temp + " °C";
+      document.getElementById("temp-fore-1").innerHTML = resJson.list[1].main.temp + unite;
 
 }
 fore1();
@@ -95,7 +122,7 @@ function fore2()
       var icone = resJson.list[2].weather[0].icon;
       document.getElementById("img-fore-2").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
 
-       document.getElementById("temp-fore-2").innerHTML = resJson.list[2].main.temp + " °C";
+       document.getElementById("temp-fore-2").innerHTML = resJson.list[2].main.temp + unite;
 }
 fore2();
 
@@ -111,7 +138,7 @@ function fore3()
       var icone = resJson.list[3].weather[0].icon;
       document.getElementById("img-fore-3").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
 
-       document.getElementById("temp-fore-3").innerHTML = resJson.list[3].main.temp + " °C";
+       document.getElementById("temp-fore-3").innerHTML = resJson.list[3].main.temp + unite;
 }
 fore3();
 
@@ -127,7 +154,7 @@ function fore4()
       var icone = resJson.list[4].weather[0].icon;
       document.getElementById("img-fore-4").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
 
-       document.getElementById("temp-fore-4").innerHTML = resJson.list[4].main.temp + " °C";
+       document.getElementById("temp-fore-4").innerHTML = resJson.list[4].main.temp + unite;
 }
 fore4();
 
@@ -203,28 +230,69 @@ if(icone == '01n' || icone == '02n' || icone == '03n' || icone == '04n' || icone
 }
 
 function recherche(){
+
+
+if(document.getElementById('lang').checked == true){
+  var language = "en"
+  var unit = "imperial"
+  var unite = " °F"
+
+  document.getElementById('indic-ressenti').innerHTML = "Feeling";
+  document.getElementById('indic-temp_min').innerHTML = "Minimum temperature";
+  document.getElementById('indic-temp_max').innerHTML = "Maximal temperature";
+  document.getElementById('indic-humidity').innerHTML = "Humidity";
+  document.getElementById('indic-pressure').innerHTML = "Pressure";
+  document.getElementById('indic-wind').innerHTML = "Wind";
+
+  document.getElementById('recherche-indic-ressenti').innerHTML = "Feeling";
+  document.getElementById('recherche-indic-temp_min').innerHTML = "Minimum temperature";
+  document.getElementById('recherche-indic-temp_max').innerHTML = "Maximal temperature";
+  document.getElementById('recherche-indic-humidity').innerHTML = "Humidity";
+  document.getElementById('recherche-indic-pressure').innerHTML = "Pressure";
+  document.getElementById('recherche-indic-wind').innerHTML = "Wind"; 
+}
+else if(document.getElementById('lang').checked == false){
+  var language = "fr"
+  var unit = "metric"
+  var unite = " °C"
+
+  document.getElementById('indic-ressenti').innerHTML = "Ressenti";
+  document.getElementById('indic-temp_min').innerHTML = "Température minimale";
+  document.getElementById('indic-temp_max').innerHTML = "Température maximale";
+  document.getElementById('indic-humidity').innerHTML = "Humidité";
+  document.getElementById('indic-pressure').innerHTML = "Pression";
+  document.getElementById('indic-wind').innerHTML = "Vent";
+
+  document.getElementById('recherche-indic-ressenti').innerHTML = "Ressenti";
+  document.getElementById('recherche-indic-temp_min').innerHTML = "Température minimale";
+  document.getElementById('recherche-indic-temp_max').innerHTML = "Température maximale";
+  document.getElementById('recherche-indic-humidity').innerHTML = "Humidité";
+  document.getElementById('recherche-indic-pressure').innerHTML = "Pression";
+  document.getElementById('recherche-indic-wind').innerHTML = "Vent"; 
+}
+
+
+
+
 	var apiKey = "17687efd1ab56d1a61a6d883c105d91a";
-	var language = "fr";
-	var unit = "metric";
 	var city = document.getElementById('recherche').value;
 	var url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${language}&units=${unit}&appid=${apiKey}`;
 
 	fetch(url)
     	.then(res => res.json())
     	.then(resJson => {
-    		console.log(resJson);
         document.getElementById('ville-result').innerHTML = resJson.name;
         document.getElementById('pays-result').innerHTML = resJson.sys.country;
-        document.getElementById("temp-result").innerHTML = resJson.main.temp + " °C";
+        document.getElementById("temp-result").innerHTML = resJson.main.temp + unite;
 
         var icone = resJson.weather[0].icon;
         document.getElementById("image-result").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
 
         document.getElementById("apparence-result").innerHTML = resJson.weather[0].description;
 
-        document.getElementById("ressenti-result").innerHTML =  resJson.main.feels_like + " °C";
-        document.getElementById("temp_max-result").innerHTML =  resJson.main.temp_max + " °C";
-        document.getElementById("temp_min-result").innerHTML =  resJson.main.temp_min + " °C";
+        document.getElementById("ressenti-result").innerHTML =  resJson.main.feels_like + unite;
+        document.getElementById("temp_max-result").innerHTML =  resJson.main.temp_max + unite;
+        document.getElementById("temp_min-result").innerHTML =  resJson.main.temp_min + unite;
         document.getElementById("humidity-result").innerHTML =  resJson.main.humidity + " %";
         document.getElementById("pressure-result").innerHTML =  resJson.main.pressure + " hPa";
 

@@ -4,7 +4,6 @@
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="index.css" />
 		<title>Weather API</title>
-		<link rel="icon" href="src/img/favicon.png" />
 	</head>
 
 
@@ -18,18 +17,25 @@
 </header>
 
 
+
 <div class="all">
 	<div class="top">
 		<div class="indications">
 			<img src="src/img/soleil.png" id="jour-nuit" />
 			<p id="day-night">Jour</p>
-			<p id="infos-city"></p>
 		</div>
 		<figure>
 			<a href="index.html"><img src="src/img/refresh.png" class="refresh" /></a>
 			<caption>Rafraîchir</caption>
 		</figure>
 	</div>
+
+<div class="english-mode">
+	<p id="infos-city"></p>
+	<input type="checkbox" id="lang" onclick="loc()"/>
+	<p class="indic-langue"> { English mode</p>
+</div>
+
 
 <div class="input-recherche">
 	<h1 id="h1-recherche">Rechercher une ville ?</h1>
@@ -74,27 +80,27 @@
 <br>
 
 		<div class="more-informations">
-			<h2 class="indic">Ressenti</h2>
+			<h2 class="indic" id="recherche-indic-ressenti">Ressenti</h2>
 			<p id="ressenti-result"></p>
 		</div>
 		<div class="more-informations">
-			<h2 class="indic">Température minimale</h2>
+			<h2 class="indic" id="recherche-indic-temp_min">Température minimale</h2>
 			<p id="temp_min-result"></p>
 		</div>
 		<div class="more-informations">
-			<h2 class="indic">Température maximale</h2>
+			<h2 class="indic" id="recherche-indic-temp_max">Température maximale</h2>
 			<p id="temp_max-result"></p>
 		</div>
 		<div class="more-informations">
-			<h2 class="indic">Humidité</h2>
+			<h2 class="indic" id="recherche-indic-humidity">Humidité</h2>
 			<p id="humidity-result"></p>
 		</div>
 		<div class="more-informations">
-			<h2 class="indic">Pression</h2>
+			<h2 class="indic" id="recherche-indic-pressure">Pression</h2>
 			<p id="pressure-result"></p>
 		</div>
 		<div class="more-informations">
-			<h2 class="indic">Vitesse du vent</h2>
+			<h2 class="indic" id="recherche-indic-wind">Vitesse du vent</h2>
 			<p id="wind-result"></p>
 		</div>
 </div>
@@ -184,27 +190,27 @@
 <br><br>
 
 		<div class="more-informations">
-			<h2 class="indic">Ressenti</h2>
+			<h2 class="indic" id="indic-ressenti">Ressenti</h2>
 			<p id="ressenti"></p>
 		</div>
 		<div class="more-informations">
-			<h2 class="indic">Température minimale</h2>
+			<h2 class="indic" id="indic-temp_min">Température minimale</h2>
 			<p id="temp_min"></p>
 		</div>
 		<div class="more-informations">
-			<h2 class="indic">Température maximale</h2>
+			<h2 class="indic" id="indic-temp_max">Température maximale</h2>
 			<p id="temp_max"></p>
 		</div>
 		<div class="more-informations">
-			<h2 class="indic">Humidité</h2>
+			<h2 class="indic" id="indic-humidity">Humidité</h2>
 			<p id="humidity"></p>
 		</div>
 		<div class="more-informations">
-			<h2 class="indic">Pression</h2>
+			<h2 class="indic" id="indic-pressure">Pression</h2>
 			<p id="pressure"></p>
 		</div>
 		<div class="more-informations">
-			<h2 class="indic">Vitesse du vent</h2>
+			<h2 class="indic" id="indic-wind">Vitesse du vent</h2>
 			<p id="wind"></p>
 	</div>
 </div>
@@ -212,6 +218,7 @@
 <br>
 <br>
 <br>
+
 <footer>
 	<a href="https://www.instagram.com/_.matt.eo.__/" id="link" target="_blank">$matteo
 </a>
