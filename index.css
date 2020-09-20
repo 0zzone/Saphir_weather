@@ -408,6 +408,7 @@ figure
 	border-radius: 10px;
 	display: block;
 	margin:auto;
+	font-family: roboto, sans-serif;
 }
 #fore-date-2
 {
@@ -420,6 +421,7 @@ figure
 	border-radius: 10px;
 	display: block;
 	margin:auto;
+	font-family: roboto, sans-serif;
 }
 #fore-date-3
 {
@@ -432,6 +434,7 @@ figure
 	border-radius: 10px;
 	display: block;
 	margin:auto;
+	font-family: roboto, sans-serif;
 }
 #fore-date-4
 {
@@ -444,6 +447,7 @@ figure
 	border-radius: 10px;
 	display: block;
 	margin:auto;
+	font-family: roboto, sans-serif;
 }
 .fore
 {
@@ -454,7 +458,6 @@ figure
 	padding-left: 7px;
 	padding-right: 7px;
 	border-top: 4px solid #071b36;
-	border-bottom: 3px solid #071b36;
 	border-radius: 0px 0px 3px 3px;
 }
 

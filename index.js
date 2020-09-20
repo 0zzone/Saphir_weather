@@ -13,7 +13,14 @@ function maDate()
 {
 var today = new Date()
 
-var tab_mois = new Array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
+if(document.getElementById('lang').checked == true){
+  var tab_mois = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+}
+else{
+  var tab_mois = new Array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
+}
+
+
 var mois = tab_mois[today.getMonth()];
 var jour = today.getDate();
 var annee = today.getFullYear();
@@ -73,21 +80,38 @@ function maPosition(position) {
     .then(resJson => {
       document.getElementById("ville").innerHTML = resJson.city.name;
       document.getElementById("infos-city").innerHTML = resJson.city.name;
-      document.getElementById("temp").innerHTML = resJson.list[0].main.temp + unite;
+      let temperature_main = resJson.list[0].main.temp;
+      let res_main = Math.round(temperature_main*10)/10;
+      document.getElementById("temp").innerHTML = res_main + unite;
       document.getElementById("pays").innerHTML = resJson.city.country;
 
       var icone = resJson.list[0].weather[0].icon;
       document.getElementById("image").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
 
       document.getElementById("apparence").innerHTML = resJson.list[0].weather[0].description;
-      document.getElementById("ressenti").innerHTML =  resJson.list[0].main.feels_like + unite;
-      document.getElementById("temp_max").innerHTML =  resJson.list[0].main.temp_max + unite;
-      document.getElementById("temp_min").innerHTML =  resJson.list[0].main.temp_min + unite;
+
+
+      let ressenti = resJson.list[0].main.feels_like;
+      let ressenti_main_res = Math.round(ressenti*10)/10;
+      document.getElementById("ressenti").innerHTML = ressenti_main_res + unite;
+
+
+      let temperature_max = resJson.list[0].main.temp_max;
+      let res_temp_max = Math.round(temperature_max*10)/10;
+      document.getElementById("temp_max").innerHTML = res_temp_max + unite;
+
+
+      let temperature_min = resJson.list[0].main.temp_min;
+      let res_temp_min = Math.round(temperature_min*10)/10;
+      document.getElementById("temp_min").innerHTML = res_temp_min + unite;
+
+
       document.getElementById("humidity").innerHTML =  resJson.list[0].main.humidity + " %";
       document.getElementById("pressure").innerHTML =  resJson.list[0].main.pressure + " hPa";
 
-      var wind = resJson.list[0].wind.speed * 3.6;
-      document.getElementById("wind").innerHTML = wind + " Km/h";
+      let vent = resJson.list[0].wind.speed * 3.6;
+      let res_vent = Math.round(vent*10)/10;
+      document.getElementById("wind").innerHTML = res_vent + " Km/h";
 
 
 function fore1()
@@ -102,7 +126,9 @@ function fore1()
       var icone = resJson.list[1].weather[0].icon;
       document.getElementById("img-fore-1").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
 
-      document.getElementById("temp-fore-1").innerHTML = resJson.list[1].main.temp + unite;
+      let temperature_1 = resJson.list[1].main.temp;
+      let res_1 = Math.round(temperature_1*10)/10;
+      document.getElementById("temp-fore-1").innerHTML = res_1 + unite;
 
 }
 fore1();
@@ -122,7 +148,9 @@ function fore2()
       var icone = resJson.list[2].weather[0].icon;
       document.getElementById("img-fore-2").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
 
-       document.getElementById("temp-fore-2").innerHTML = resJson.list[2].main.temp + unite;
+      let temperature_2 = resJson.list[2].main.temp;
+      let res_2 = Math.round(temperature_2*10)/10;
+      document.getElementById("temp-fore-2").innerHTML = res_2 + unite;
 }
 fore2();
 
@@ -138,7 +166,9 @@ function fore3()
       var icone = resJson.list[3].weather[0].icon;
       document.getElementById("img-fore-3").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
 
-       document.getElementById("temp-fore-3").innerHTML = resJson.list[3].main.temp + unite;
+      let temperature_3 = resJson.list[3].main.temp;
+      let res_3 = Math.round(temperature_3*10)/10;
+      document.getElementById("temp-fore-3").innerHTML = res_3 + unite;
 }
 fore3();
 
@@ -154,7 +184,9 @@ function fore4()
       var icone = resJson.list[4].weather[0].icon;
       document.getElementById("img-fore-4").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
 
-       document.getElementById("temp-fore-4").innerHTML = resJson.list[4].main.temp + unite;
+      let temperature_4 = resJson.list[4].main.temp;
+      let res_4 = Math.round(temperature_4*10)/10;
+      document.getElementById("temp-fore-4").innerHTML = res_4 + unite;
 }
 fore4();
 
@@ -297,22 +329,39 @@ else if(document.getElementById('lang').checked == false){
           document.getElementById('infos-result').style.display="block";
           document.getElementById('ville-result').innerHTML = resJson.name;
           document.getElementById('pays-result').innerHTML = resJson.sys.country;
-          document.getElementById("temp-result").innerHTML = resJson.main.temp + unite;
+
+
+          let temperature = resJson.main.temp;
+          let res_temp = Math.round(temperature*10)/10;
+          document.getElementById("temp-result").innerHTML = res_temp + unite;
 
         var icone = resJson.weather[0].icon;
         document.getElementById("image-result").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
 
         document.getElementById("apparence-result").innerHTML = resJson.weather[0].description;
 
-        document.getElementById("ressenti-result").innerHTML =  resJson.main.feels_like + unite;
-        document.getElementById("temp_max-result").innerHTML =  resJson.main.temp_max + unite;
-        document.getElementById("temp_min-result").innerHTML =  resJson.main.temp_min + unite;
+        let ressenti_result = resJson.main.feels_like;
+        let ressenti_res = Math.round(ressenti_result*10)/10;
+        document.getElementById("ressenti-result").innerHTML = ressenti_res + unite;
+
+
+
+
+        let temp_max_result = resJson.main.temp_max;
+        let temp_max_result_res = Math.round(temp_max_result*10)/10;
+        document.getElementById("temp_max-result").innerHTML = temp_max_result_res + unite;
+
+        let temp_min_result = resJson.main.temp_min;
+        let temp_min_result_res = Math.round(temp_min_result*10)/10;
+        document.getElementById("temp_min-result").innerHTML = temp_min_result_res + unite;
+
+
         document.getElementById("humidity-result").innerHTML =  resJson.main.humidity + " %";
         document.getElementById("pressure-result").innerHTML =  resJson.main.pressure + " hPa";
 
-        var wind = resJson.wind.speed * 3.6;
-        document.getElementById("wind-result").innerHTML = wind + " Km/h";
-        console.log('hey');
+        let wind_result = resJson.wind.speed * 3.6;
+        let wind_result_res = Math.round(wind_result*10)/10;
+        document.getElementById("wind-result").innerHTML = wind_result_res + " Km/h";
       }
 
 
