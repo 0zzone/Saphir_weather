@@ -200,7 +200,7 @@ function savoirJour4(){
 savoirJour4();
 
 
-if(icone == '01n' || icone == '02n' || icone == '03n' || icone == '04n' || icone == '09n' || icone == '10n' || icone == '11n' || icone == '13n' || icone == '50n')
+if(icone == '01n' || icone == '0n' || icone == '03n' || icone == '04n' || icone == '09n' || icone == '10n' || icone == '11n' || icone == '13n' || icone == '50n')
 {
 	var body = document.querySelector('body');
 		body.style.backgroundColor="#0c224a";
@@ -223,6 +223,7 @@ if(icone == '01n' || icone == '02n' || icone == '03n' || icone == '04n' || icone
     validate_input.style.color="ghostwhite";
     validate_input.style.border="1px solid ghostwhite";
 
+  document.getElementById('ville-alert').style.color="silver";
 }
 
  
@@ -282,23 +283,21 @@ else if(document.getElementById('lang').checked == false){
     	.then(res => res.json())
     	.then(resJson => {
 
-        var name_city = resJson.message;
-        var name_geo = resJson.message;
-        if(name_city == "city not found"){
+
+        if(resJson.message == "city not found"){
           document.getElementById('ville-alert').innerHTML = "Aucune ville n'a été trouvée :(";
           document.getElementById('infos-result').style.display="none";
         }
-        if(name_geo == "Nothing to geocode"){
+        if(resJson.message == "Nothing to geocode"){
           document.getElementById('ville-alert').innerHTML = "Veuillez rentrer dans la barre de recherche ci-dessus le nom d'une ville pour  obtenir la météo de celle-ci";
           document.getElementById('infos-result').style.display="none";
         }
-        else{
+        else if(resJson.base == 'stations'){
+          document.getElementById('ville-alert').innerHTML = "";
+          document.getElementById('infos-result').style.display="block";
           document.getElementById('ville-result').innerHTML = resJson.name;
-        }
-
-
-        document.getElementById('pays-result').innerHTML = resJson.sys.country;
-        document.getElementById("temp-result").innerHTML = resJson.main.temp + unite;
+          document.getElementById('pays-result').innerHTML = resJson.sys.country;
+          document.getElementById("temp-result").innerHTML = resJson.main.temp + unite;
 
         var icone = resJson.weather[0].icon;
         document.getElementById("image-result").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
@@ -313,6 +312,11 @@ else if(document.getElementById('lang').checked == false){
 
         var wind = resJson.wind.speed * 3.6;
         document.getElementById("wind-result").innerHTML = wind + " Km/h";
+        console.log('hey');
+      }
+
+
+
 
     	})
 }

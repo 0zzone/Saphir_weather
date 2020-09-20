@@ -1,5 +1,5 @@
 #ville-alert{
-	color: silver;
+	color: ghostwhite;
 	font-family: roboto,sans-serif;
 	text-align: center;
 }
@@ -286,6 +286,16 @@ figure
 	flex-direction: column;
 }
 #infos
+{
+	width: 450px;
+	display: block;
+	margin:auto;
+	border-radius: 10px;
+	background-color: ghostwhite;
+	padding-top: 10px;
+	padding-bottom: 20px;r
+}
+#infos-result
 {
 	width: 450px;
 	display: block;
@@ -691,6 +701,11 @@ figure
 	}
 
 	#infos
+	{
+		width: 90%;
+		border-radius: 40px;
+	}
+	#infos-result
 	{
 		width: 90%;
 		border-radius: 40px;
