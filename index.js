@@ -86,7 +86,7 @@ function maPosition(position) {
       document.getElementById("pays").innerHTML = resJson.city.country;
 
       var icone = resJson.list[0].weather[0].icon;
-      document.getElementById("image").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".jpeg")
+      document.getElementById("image").setAttribute('src', "http://openweathermap.org/img/w/" + icone + ".png")
 
       document.getElementById("apparence").innerHTML = resJson.list[0].weather[0].description;
 
