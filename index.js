@@ -1,6 +1,3 @@
-
-
-
 function monHeure()
 {
 	var today = new Date();
@@ -321,11 +318,11 @@ else if(document.getElementById('lang').checked == false){
           document.getElementById('infos-result').style.display="none";
         }
         if(resJson.message == "Nothing to geocode"){
-          document.getElementById('ville-alert').innerHTML = "Veuillez rentrer dans la barre de recherche ci-dessus le nom d'une ville pour  obtenir la météo de celle-ci";
+          document.getElementById('ville-alert').innerHTML = "Veuillez rentrer le nom d'une ville ci-dessus";
           document.getElementById('infos-result').style.display="none";
         }
         else if(resJson.base == 'stations'){
-          document.getElementById('ville-alert').innerHTML = "";
+          document.getElementById('ville-alert').innerHTML = "Bingo !";
           document.getElementById('infos-result').style.display="block";
           document.getElementById('ville-result').innerHTML = resJson.name;
           document.getElementById('pays-result').innerHTML = resJson.sys.country;

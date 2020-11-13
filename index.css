@@ -4,7 +4,7 @@
 	text-align: center;
 }
 .english-mode{
-	width: 300px;
+	width: 370px;
 	display: flex;
 	justify-content: space-between;
 	margin:auto;
@@ -48,6 +48,7 @@
 	display: block;
 	margin-top: auto;
 	margin-bottom: auto;
+	margin-left: 50px;
 	color: ghostwhite;
 	font-family: sora,sans-serif;
 }
@@ -79,7 +80,7 @@ header
 	display: flex;
 	justify-content: space-around;
 	border-bottom: 5px solid orange;
-	background-color: black;
+	background-color: #242323;
 	margin-top: auto;
 	margin-bottom: auto;
 }
@@ -107,11 +108,10 @@ header
 	color: white;
 	background-color: #03a9f4;
 	padding-left: 6px;
-	padding-right: 8px;
+	padding-right: 10px;
 	border-radius: 5px;
 	justify-content: space-between;
-	margin-top: auto;
-	margin-bottom: auto;
+	margin-right: 50px;
 }
 .img-loc{
 	width: 25px;
@@ -235,7 +235,7 @@ header
 	font-size: 40px;
 	font-family: sora, sans-serif;
 	text-align: center;
-	color: ghostwhite;
+	color: #faf9f7;
 }
 .top
 {
@@ -606,7 +606,9 @@ figure
 		width: 170px;
 	}
 	.english-mode{
-		width: 650px;
+		width: 90%;
+		display: flex;
+		justify-content: center;
 	}
 	.indic-langue{
 		font-size: 35px;
