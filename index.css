@@ -43,7 +43,7 @@
 #lang:checked:before{
 	left: 30px;
 }
-.indic-langue
+#indic-langue
 {
 	display: block;
 	margin-top: auto;
@@ -293,7 +293,7 @@ figure
 	border-radius: 10px;
 	background-color: ghostwhite;
 	padding-top: 10px;
-	padding-bottom: 20px;r
+	padding-bottom: 20px;
 }
 #infos-result
 {
@@ -303,7 +303,7 @@ figure
 	border-radius: 10px;
 	background-color: ghostwhite;
 	padding-top: 10px;
-	padding-bottom: 20px;r
+	padding-bottom: 20px;
 }
 .ville-pays
 {
@@ -610,7 +610,7 @@ figure
 		display: flex;
 		justify-content: center;
 	}
-	.indic-langue{
+	#indic-langue{
 		font-size: 35px;
 		display: block;
 		margin-top: auto;

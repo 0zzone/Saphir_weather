@@ -8,13 +8,13 @@ setInterval("monHeure()", 1000);
 
 function maDate()
 {
-var today = new Date()
+  var today = new Date()
 
-if(document.getElementById('lang').checked == true){
-  var tab_mois = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
-}
-else{
-  var tab_mois = new Array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
+  if(document.getElementById('lang').checked == true){
+    var tab_mois = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+  }
+  else{
+    var tab_mois = new Array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
 }
 
 
@@ -29,6 +29,9 @@ setInterval("maDate()", 1000);
 
 
 
+if(document.getElementById('lang').checked == true){
+  loc()
+}
 
 
 
@@ -41,7 +44,7 @@ function loc(){
   }
   recherche()
 }
-loc()
+
 
 function maPosition(position) {
 
@@ -52,14 +55,26 @@ function maPosition(position) {
 
 
   if(document.getElementById('lang').checked == true){
-    var language = "en"
-    var unit = "imperial"
-    var unite = " °F"
+    var language = "en";
+    var unit = "imperial";
+    var unite = " °F";
+    document.getElementById('h1-recherche').innerHTML = "Search a city ?";
+    document.getElementById('validate').value = 'Search';
+    document.getElementById('recherche').placeholder='Enter a city name';
+    document.getElementById("refresh-img").innerHTML = "Refresh";
+    document.getElementById("titre").innerHTML = "[ Matteo's weather ]";
+    document.getElementById("indic-langue").innerHTML = "[ Mode français";
   }
   else{
-    var language = "fr"
-    var unit = "metric"
-    var unite = " °C"
+    var language = "fr";
+    var unit = "metric";
+    var unite = " °C";
+    document.getElementById('h1-recherche').innerHTML = "Rechercher une ville ?";
+    document.getElementById('validate').value = 'Rechercher';
+    document.getElementById('recherche').placeholder='Entrez le nom d\'une ville';
+    document.getElementById("refresh-img").innerHTML = "Rafraîchir";
+    document.getElementById("titre").innerHTML = "[ La météo de Mattéo ]";
+    document.getElementById("indic-langue").innerHTML = "[ English mode";
   }
 
 
@@ -236,7 +251,12 @@ if(icone == '01n' || icone == '0n' || icone == '03n' || icone == '04n' || icone 
 
   document.getElementById("jour-nuit").setAttribute('src', "src/img/lune.png");
 
-  document.getElementById("day-night").innerHTML = "Nuit";
+    if(document.getElementById('lang').checked == true){
+      document.getElementById("day-night").innerHTML = "Night";
+    }
+    else{
+      document.getElementById("day-night").innerHTML = "Nuit";
+    }
 
 
   var lien = document.getElementById("link");
@@ -254,10 +274,18 @@ if(icone == '01n' || icone == '0n' || icone == '03n' || icone == '04n' || icone 
 
   document.getElementById('ville-alert').style.color="silver";
 }
-
+else{
+  if(document.getElementById('lang').checked == true){
+    document.getElementById("day-night").innerHTML = "Day";
+  }
+  else{
+    document.getElementById("day-night").innerHTML = "Jour";
+  }
+}
  
     })
 }
+
 
 function recherche(){
 
@@ -314,12 +342,24 @@ else if(document.getElementById('lang').checked == false){
 
 
         if(resJson.message == "city not found"){
+          if(document.getElementById('lang').checked == false){
           document.getElementById('ville-alert').innerHTML = "Aucune ville n'a été trouvée :(";
           document.getElementById('infos-result').style.display="none";
+          }
+          else{
+            document.getElementById('ville-alert').innerHTML = "No city have been found :(";
+            document.getElementById('infos-result').style.display="none";
+          }
         }
         if(resJson.message == "Nothing to geocode"){
+          if(document.getElementById('lang').checked == false){
           document.getElementById('ville-alert').innerHTML = "Veuillez rentrer le nom d'une ville ci-dessus";
           document.getElementById('infos-result').style.display="none";
+          }
+          else{
+            document.getElementById('ville-alert').innerHTML = "Please enter a city name above";
+            document.getElementById('infos-result').style.display="none";
+          }
         }
         else if(resJson.base == 'stations'){
           document.getElementById('ville-alert').innerHTML = "Bingo !";

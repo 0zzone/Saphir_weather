@@ -11,7 +11,7 @@
 
 <header>
 	<div class="first">
-		<h1 id="titre">[ La météo de Mattéo ]</h1>
+		<h1 id="titre"></h1>
 		<div class="cercle"></div>
 	</div>
 </header>
@@ -22,11 +22,11 @@
 	<div class="top">
 		<div class="indications">
 			<img src="src/img/soleil.png" id="jour-nuit" />
-			<p id="day-night">Jour</p>
+			<p id="day-night"></p>
 		</div>
 		<figure>
 			<a href="index.html"><img src="src/img/refresh.png" class="refresh" /></a>
-			<caption>Rafraîchir</caption>
+			<p id="refresh-img"></p>
 		</figure>
 	</div>
 
@@ -39,15 +39,15 @@
 		<p id="infos-city"></p>
 	</div>
 	<input type="checkbox" id="lang" onclick="loc()"/>
-	<p class="indic-langue"> [ English mode</p>
+	<p id="indic-langue"></p>
 </div>
 
 
 <div class="input-recherche">
-	<h1 id="h1-recherche">Rechercher une ville ?</h1>
+	<h1 id="h1-recherche"></h1>
 	<div class="div-recherche">
-		<input type="text" id="recherche" placeholder="Rechercher une ville" />
-		<input type="submit" id="validate" onclick="recherche()" value="Rechercher"/>
+		<input type="text" id="recherche" placeholder="" />
+		<input type="submit" id="validate" onclick="recherche()" value=""/>
 	</div>
 </div>
 
