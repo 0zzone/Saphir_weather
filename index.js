@@ -32,9 +32,7 @@ setInterval("maDate()", 1000);
 if(document.getElementById('lang').checked == true){
   loc();
 }
-else{
-	loc();
-}
+loc();
 
 
 
