@@ -63,7 +63,7 @@ function maPosition(position) {
     document.getElementById('validate').value = 'Search';
     document.getElementById('recherche').placeholder='Enter a city name';
     document.getElementById("refresh-img").innerHTML = "Refresh";
-    document.getElementById("titre").innerHTML = "[ Saphir's weather ]";
+    document.getElementById("titre").innerHTML = "Saphir weather";
     document.getElementById("indic-langue").innerHTML = "[ Mode français";
   }
   else{
@@ -74,7 +74,7 @@ function maPosition(position) {
     document.getElementById('validate').value = 'Rechercher';
     document.getElementById('recherche').placeholder='Entrez le nom d\'une ville';
     document.getElementById("refresh-img").innerHTML = "Rafraîchir";
-    document.getElementById("titre").innerHTML = "[ Saphir's weather ]";
+    document.getElementById("titre").innerHTML = "Saphir weather";
     document.getElementById("indic-langue").innerHTML = "[ English mode";
   }
 
